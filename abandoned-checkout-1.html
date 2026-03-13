@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>You were so close</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700;800&display=swap');
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #f5f0eb; }
+    @media screen and (max-width: 600px) {
+      .email-container { width: 100% !important; }
+      .fluid { max-width: 100% !important; height: auto !important; }
+      .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
+      .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      .mobile-center { text-align: center !important; }
+      .cta-btn { width: 100% !important; max-width: 320px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f0eb;">
+  <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">Your order is saved. Just one click to finish.</div>
+  <!--[if mso]>
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center"><tr><td>
+  <![endif]-->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto;" class="email-container">
+
+    <!-- HEADER -->
+    <tr>
+      <td style="background-color: #1a1a1a; padding: 24px 40px; text-align: center;">
+        <a href="https://thesausagebosssausage.com" target="_blank">
+          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="180" alt="The Sausage Boss" style="display: inline-block; max-width: 180px; height: auto;">
+        </a>
+      </td>
+    </tr>
+
+    <!-- BODY -->
+    <tr>
+      <td style="background-color: #f5f0eb; padding: 48px 40px 32px 40px;" class="mobile-padding">
+        <h1 style="margin: 0 0 16px 0; font-family: 'Alegreya', Georgia, serif; font-size: 32px; line-height: 38px; font-weight: 800; color: #1a1a1a; text-align: center; text-transform: uppercase;">You're One Step Away</h1>
+        <p style="margin: 0 0 32px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #666666; text-align: center;">You were <em>this close</em> to boss-level flavor. Your order is saved and ready to go. Just one click to finish.</p>
+      </td>
+    </tr>
+
+    <!-- CHECKOUT ITEMS -->
+    <tr>
+      <td style="background-color: #f5f0eb; padding: 0 40px;" class="mobile-padding">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 4px;">
+          {% for item in event.Items %}
+          <tr>
+            <td width="80" style="padding: 12px;">
+              <a href="{{ item.ProductURL }}" target="_blank">
+                <img src="{{ item.ImageURL }}" width="80" alt="{{ item.ProductName }}" style="display: block; border-radius: 4px;">
+              </a>
+            </td>
+            <td style="padding: 12px; font-family: Arial, Helvetica, sans-serif; vertical-align: middle;">
+              <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 700; color: #1a1a1a;">{{ item.ProductName }}</p>
+              {% if item.Variant and item.Variant != "Default Title" %}
+              <p style="margin: 0 0 4px 0; font-size: 12px; color: #888888;">{{ item.Variant }}</p>
+              {% endif %}
+              <p style="margin: 0; font-size: 14px; color: #666666;">Qty: {{ item.Quantity }} | ${{ item.RowTotal|floatformat:2 }}</p>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </td>
+    </tr>
+
+    <!-- TOTAL -->
+    <tr>
+      <td style="background-color: #f5f0eb; padding: 16px 40px 0 40px;" class="mobile-padding">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td style="padding: 12px 0; border-top: 2px solid #1a1a1a; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a; text-align: right;">
+              Total: ${{ event.Value|floatformat:2 }}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- CTA -->
+    <tr>
+      <td style="background-color: #f5f0eb; padding: 32px 40px 16px 40px; text-align: center;" class="mobile-padding">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+          <tr>
+            <td style="border-radius: 4px; background-color: #c9511e;">
+              <a href="{{ event.CheckoutURL }}" target="_blank" style="display: inline-block; padding: 16px 40px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;" class="cta-btn">Complete Your Purchase</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- REASSURANCE -->
+    <tr>
+      <td style="background-color: #f5f0eb; padding: 8px 40px 48px 40px; text-align: center;" class="mobile-padding">
+        <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #888888;">Secure checkout. Shipped frozen. Arrives in 2-5 days.</p>
+      </td>
+    </tr>
+
+    <!-- FOOTER -->
+    <tr>
+      <td style="background-color: #1a1a1a; padding: 40px 40px 24px 40px; text-align: center;" class="mobile-padding">
+        <a href="https://thesausagebosssausage.com" target="_blank">
+          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="display: inline-block; max-width: 120px; height: auto; margin-bottom: 16px;">
+        </a>
+        <p style="margin: 0 0 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px;">
+          <a href="https://thesausagebosssausage.com/collections/all" style="color: #c9511e; text-decoration: none; font-weight: 700;">Shop</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://thesausagebosssausage.com/blogs/recipes" style="color: #c9511e; text-decoration: none; font-weight: 700;">Recipes</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://thesausagebosssausage.com/pages/our-story" style="color: #c9511e; text-decoration: none; font-weight: 700;">Our Story</a>
+        </p>
+        <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">{{ organization.name }} | {{ organization.address }}</p>
+        <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;"><a href="{% unsubscribe %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{% manage_preferences %}" style="color: #888888; text-decoration: underline;">Manage Preferences</a></p>
+      </td>
+    </tr>
+
+  </table>
+  <!--[if mso]>
+  </td></tr></table>
+  <![endif]-->
+</body>
+</html>

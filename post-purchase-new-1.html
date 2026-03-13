@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Your order is confirmed!</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #f5f0eb; }
+
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700;800&display=swap');
+
+    /* Mobile */
+    @media only screen and (max-width: 600px) {
+      .email-container { width: 100% !important; }
+      .fluid { max-width: 100% !important; height: auto !important; }
+      .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
+      .stack-column-center { text-align: center !important; }
+      .center-on-narrow { text-align: center !important; display: block !important; margin-left: auto !important; margin-right: auto !important; float: none !important; }
+      table.center-on-narrow { display: inline-block !important; }
+      .padding-mobile { padding-left: 20px !important; padding-right: 20px !important; }
+      .hero-text { font-size: 28px !important; line-height: 34px !important; }
+      .product-img { width: 100% !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f0eb;">
+  <center style="width: 100%; background-color: #f5f0eb;">
+    <!-- Preview text -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+      Your sausages are being packed with care.
+    </div>
+
+    <!-- Email wrapper -->
+    <div style="max-width: 600px; margin: 0 auto;">
+      <!--[if mso]>
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+      <tr><td>
+      <![endif]-->
+
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto;" class="email-container">
+
+        <!-- Logo Header -->
+        <tr>
+          <td style="background-color: #1a1a1a; padding: 24px 0; text-align: center;">
+            <a href="https://thesausagebosssausage.com" target="_blank">
+              <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="180" alt="The Sausage Boss" style="display: inline-block; width: 180px; max-width: 180px;">
+            </a>
+          </td>
+        </tr>
+
+        <!-- Welcome Headline -->
+        <tr>
+          <td style="background-color: #f5f0eb; padding: 40px 40px 16px 40px; text-align: center;" class="padding-mobile">
+            <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 34px; line-height: 40px; font-weight: 800; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px;" class="hero-text">
+              Welcome to the<br>Family, Boss
+            </h1>
+          </td>
+        </tr>
+
+        <!-- Welcome Copy -->
+        <tr>
+          <td style="background-color: #f5f0eb; padding: 8px 40px 32px 40px; text-align: center;" class="padding-mobile">
+            <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 26px; color: #666666;">
+              Your order is on its way! Here's what to expect.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Order Items Card -->
+        <tr>
+          <td style="background-color: #f5f0eb; padding: 0 40px 16px 40px;" class="padding-mobile">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+              <tr>
+                <td style="padding: 20px 16px 8px 16px;">
+                  <p style="margin: 0 0 12px 0; font-family: 'Alegreya', Georgia, serif; font-size: 18px; font-weight: 700; color: #1a1a1a; text-transform: uppercase;">Your Order</p>
+                </td>
+              </tr>
+              {% for item in event.Items %}
+              <tr>
+                <td style="padding: 0 16px;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td width="80" style="padding: 12px;">
+                        <img src="{{ item.ImageURL }}" width="80" alt="{{ item.ProductName }}" style="display: block; border-radius: 4px;">
+                      </td>
+                      <td style="padding: 12px; font-family: Arial, Helvetica, sans-serif; vertical-align: middle;">
+                        <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 700; color: #1a1a1a;">{{ item.ProductName }}</p>
+                        <p style="margin: 0; font-size: 14px; color: #666666;">Qty: {{ item.Quantity }} | ${{ item.RowTotal|floatformat:2 }}</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              {% endfor %}
+              <!-- Divider -->
+              <tr>
+                <td style="padding: 8px 28px 0 28px;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td style="border-top: 1px solid #e8e0d6; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Order Total -->
+              <tr>
+                <td style="padding: 12px 28px 20px 28px;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">
+                        Total
+                      </td>
+                      <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a; text-align: right;">
+                        ${{ event.Value|floatformat:2 }}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- What's Next Section -->
+        <tr>
+          <td style="background-color: #f5f0eb; padding: 20px 40px 8px 40px; text-align: center;" class="padding-mobile">
+            <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 26px; line-height: 32px; font-weight: 700; color: #1a1a1a; text-transform: uppercase;">
+              What's Next
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #f5f0eb; padding: 12px 40px 32px 40px; text-align: center;" class="padding-mobile">
+            <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 24px; color: #666666;">
+              Your sausages are packed frozen with care and shipped within 24 hours. They'll arrive at your door in 2-5 business days, ready to fire up on the grill or smoker.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Our Mission Section -->
+        <tr>
+          <td style="background-color: #1a1a1a; padding: 32px 40px; text-align: center;" class="padding-mobile">
+            <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 24px; color: #e8e0d6;">
+              We want to share our unique flavors with as many people as possible. It's important to love and care about the foods we put in our bodies and we take pride in providing our customers with <strong style="color: #ffffff;">quality ingredients and love</strong>.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Social Follow CTA -->
+        <tr>
+          <td style="background-color: #f5f0eb; padding: 32px 40px; text-align: center;" class="padding-mobile">
+            <p style="margin: 0 0 4px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #999999; text-transform: uppercase; letter-spacing: 2px;">
+              Stay Connected
+            </p>
+            <h2 style="margin: 0 0 12px 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; line-height: 28px; font-weight: 700; color: #1a1a1a;">
+              Follow Us for Recipes & Grilling Tips
+            </h2>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #c9511e; border-radius: 4px; text-align: center;">
+                  <a href="https://thesausagebosssausage.com/blogs/recipes" target="_blank" style="display: inline-block; padding: 16px 40px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
+                    See Recipes
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background-color: #1a1a1a; padding: 28px 40px; text-align: center;" class="padding-mobile">
+            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="display: inline-block; width: 120px; max-width: 120px; margin-bottom: 16px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #666666;">
+              <a href="https://thesausagebosssausage.com" style="color: #c9511e; text-decoration: none;">Shop</a> &nbsp;&bull;&nbsp;
+              <a href="https://thesausagebosssausage.com/blogs/recipes" style="color: #c9511e; text-decoration: none;">Recipes</a> &nbsp;&bull;&nbsp;
+              <a href="https://thesausagebosssausage.com/pages/about" style="color: #c9511e; text-decoration: none;">Our Story</a>
+            </p>
+            <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">{{ organization.name }} | {{ organization.address }}</p>
+            <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;"><a href="{% unsubscribe %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{% manage_preferences %}" style="color: #888888; text-decoration: underline;">Manage Preferences</a></p>
+          </td>
+        </tr>
+
+      </table>
+
+      <!--[if mso]>
+      </td></tr></table>
+      <![endif]-->
+    </div>
+  </center>
+</body>
+</html>

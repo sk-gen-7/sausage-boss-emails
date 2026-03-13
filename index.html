@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sausage Boss - Email Flows Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #111; color: #fff; }
+
+    .header { padding: 40px 24px; text-align: center; border-bottom: 1px solid #333; }
+    .header h1 { font-size: 28px; font-weight: 800; color: #c9511e; margin-bottom: 8px; }
+    .header p { font-size: 14px; color: #888; }
+    .header .badge { display: inline-block; background: #c9511e; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-top: 12px; }
+
+    .nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 20px 24px; border-bottom: 1px solid #222; background: #0a0a0a; position: sticky; top: 0; z-index: 100; }
+    .nav a { padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #888; text-decoration: none; border: 1px solid #333; transition: all 0.2s; }
+    .nav a:hover, .nav a.active { color: #fff; border-color: #c9511e; background: rgba(201, 81, 30, 0.15); }
+
+    .flow-section { padding: 48px 24px 24px; max-width: 1200px; margin: 0 auto; }
+    .flow-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #222; }
+    .flow-header h2 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .flow-header .flow-meta { display: flex; gap: 16px; flex-wrap: wrap; }
+    .flow-header .flow-meta span { font-size: 13px; color: #888; }
+    .flow-header .flow-meta .tag { background: #222; padding: 2px 8px; border-radius: 4px; }
+    .flow-header .flow-meta .tag-offer { background: rgba(201, 81, 30, 0.2); color: #c9511e; }
+
+    .email-grid { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 24px; scroll-snap-type: x mandatory; }
+    .email-card { flex: 0 0 auto; width: 380px; scroll-snap-align: start; }
+    .email-card-header { background: #1a1a1a; border: 1px solid #333; border-bottom: none; border-radius: 12px 12px 0 0; padding: 16px; }
+    .email-card-header .email-num { font-size: 11px; font-weight: 700; color: #c9511e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .email-card-header h3 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .email-card-header .subject { font-size: 13px; color: #aaa; margin-bottom: 2px; }
+    .email-card-header .timing { font-size: 12px; color: #666; }
+
+    .email-frame-wrapper { border: 1px solid #333; border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; background: #fff; }
+    .email-frame-wrapper iframe { width: 100%; height: 800px; border: none; display: block; }
+
+    .footer { padding: 40px 24px; text-align: center; border-top: 1px solid #222; margin-top: 40px; }
+    .footer p { font-size: 13px; color: #666; }
+    .footer a { color: #c9511e; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .email-card { width: 320px; }
+      .email-frame-wrapper iframe { height: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>The Sausage Boss</h1>
+    <p>Email Flows Preview - Client Review</p>
+    <span class="badge">17 Emails | 6 Flows</span>
+  </div>
+
+  <nav class="nav">
+    <a href="#welcome" class="active">Welcome Series</a>
+    <a href="#abandoned-cart">Abandoned Cart</a>
+    <a href="#abandoned-checkout">Abandoned Checkout</a>
+    <a href="#browse-abandon">Browse Abandonment</a>
+    <a href="#post-purchase-new">Post-Purchase (New)</a>
+    <a href="#post-purchase-returning">Post-Purchase (Returning)</a>
+    <a href="#reorder">Reorder</a>
+  </nav>
+
+  <!-- Welcome Series -->
+  <section class="flow-section" id="welcome">
+    <div class="flow-header">
+      <h2>Welcome Series</h2>
+      <div class="flow-meta">
+        <span class="tag">Pre-Purchase</span>
+        <span class="tag tag-offer">10% OFF</span>
+        <span>Trigger: Added to email list</span>
+        <span>3 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 3</div>
+          <h3>Welcome to the Boss Club</h3>
+          <div class="subject">Subject: Welcome to the family, [Name]</div>
+          <div class="timing">Sends: Immediately</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="welcome-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 3</div>
+          <h3>The Sausage That Broke the Internet</h3>
+          <div class="subject">Subject: This sausage went viral for a reason</div>
+          <div class="timing">Sends: Day 1</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="welcome-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 3 of 3</div>
+          <h3>Your 10% Off Expires Soon</h3>
+          <div class="subject">Subject: Last chance for 10% off, [Name]</div>
+          <div class="timing">Sends: Day 3</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="welcome-3.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abandoned Cart -->
+  <section class="flow-section" id="abandoned-cart">
+    <div class="flow-header">
+      <h2>Abandoned Cart</h2>
+      <div class="flow-meta">
+        <span class="tag">Pre-Purchase</span>
+        <span class="tag tag-offer">10% OFF (Email 2 & 3)</span>
+        <span>Trigger: Added to Cart (custom event)</span>
+        <span>3 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 3</div>
+          <h3>You Left Some Boss-Level Flavor Behind</h3>
+          <div class="subject">Subject: Your cart is getting cold, [Name]</div>
+          <div class="timing">Sends: 1 hour after cart abandon</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="abandoned-cart-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 3</div>
+          <h3>Still Thinking About It?</h3>
+          <div class="subject">Subject: Good taste shouldn't wait</div>
+          <div class="timing">Sends: 24 hours</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="abandoned-cart-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 3 of 3</div>
+          <h3>Last Call, Boss</h3>
+          <div class="subject">Subject: Final reminder: your sausages won't wait forever</div>
+          <div class="timing">Sends: 48 hours</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="abandoned-cart-3.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abandoned Checkout -->
+  <section class="flow-section" id="abandoned-checkout">
+    <div class="flow-header">
+      <h2>Abandoned Checkout</h2>
+      <div class="flow-meta">
+        <span class="tag">Pre-Purchase</span>
+        <span class="tag tag-offer">15% OFF (Email 2 & 3)</span>
+        <span>Trigger: Started Checkout</span>
+        <span>3 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 3</div>
+          <h3>You're One Step Away</h3>
+          <div class="subject">Subject: You were so close, [Name]</div>
+          <div class="timing">Sends: 30 minutes</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="abandoned-checkout-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 3</div>
+          <h3>We Saved Your Order + 15% Off</h3>
+          <div class="subject">Subject: Here's 15% off to finish your order</div>
+          <div class="timing">Sends: 12 hours</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="abandoned-checkout-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 3 of 3</div>
+          <h3>Final Call: 15% Off Expires</h3>
+          <div class="subject">Subject: Last chance: 15% off disappears tonight</div>
+          <div class="timing">Sends: 36 hours</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="abandoned-checkout-3.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse Abandonment -->
+  <section class="flow-section" id="browse-abandon">
+    <div class="flow-header">
+      <h2>Browse Abandonment</h2>
+      <div class="flow-meta">
+        <span class="tag">Pre-Purchase</span>
+        <span class="tag">No Offer</span>
+        <span>Trigger: Viewed Product</span>
+        <span>2 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 2</div>
+          <h3>Caught You Looking...</h3>
+          <div class="subject">Subject: Still thinking about [Product Name]?</div>
+          <div class="timing">Sends: 2 hours</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="browse-abandon-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 2</div>
+          <h3>Everyone's Talking About It</h3>
+          <div class="subject">Subject: [Product Name] is a fan favorite</div>
+          <div class="timing">Sends: 24 hours</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="browse-abandon-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post-Purchase: New Customer -->
+  <section class="flow-section" id="post-purchase-new">
+    <div class="flow-header">
+      <h2>Post-Purchase: New Customer</h2>
+      <div class="flow-meta">
+        <span class="tag">Post-Purchase</span>
+        <span class="tag">No Offer</span>
+        <span>Trigger: Placed Order (first time)</span>
+        <span>2 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 2</div>
+          <h3>Welcome to the Family, Boss</h3>
+          <div class="subject">Subject: Your order is confirmed! Here's what's next.</div>
+          <div class="timing">Sends: Immediately</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="post-purchase-new-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 2</div>
+          <h3>Cook Like a Boss</h3>
+          <div class="subject">Subject: How to cook your sausages like a pro</div>
+          <div class="timing">Sends: Day 3</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="post-purchase-new-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post-Purchase: Returning Customer -->
+  <section class="flow-section" id="post-purchase-returning">
+    <div class="flow-header">
+      <h2>Post-Purchase: Returning Customer</h2>
+      <div class="flow-meta">
+        <span class="tag">Post-Purchase</span>
+        <span class="tag">No Offer</span>
+        <span>Trigger: Placed Order (2+ times)</span>
+        <span>2 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 2</div>
+          <h3>Thanks for Coming Back, Boss</h3>
+          <div class="subject">Subject: Order confirmed! You know the drill.</div>
+          <div class="timing">Sends: Immediately</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="post-purchase-returning-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 2</div>
+          <h3>New Ways to Enjoy Your Favorites</h3>
+          <div class="subject">Subject: Have you tried this recipe yet?</div>
+          <div class="timing">Sends: Day 3</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="post-purchase-returning-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reorder -->
+  <section class="flow-section" id="reorder">
+    <div class="flow-header">
+      <h2>Reorder Flow</h2>
+      <div class="flow-meta">
+        <span class="tag">Post-Purchase</span>
+        <span class="tag">No Offer</span>
+        <span>Trigger: Placed Order + time delay (14/30/60 days by product)</span>
+        <span>2 Emails</span>
+      </div>
+    </div>
+    <div class="email-grid">
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 1 of 2</div>
+          <h3>Ready for Round Two?</h3>
+          <div class="subject">Subject: Time to fire up the grill again?</div>
+          <div class="timing">Sends: Day 14 (pack) / Day 30 (box) / Day 60 (XL)</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="reorder-1.html" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="email-card">
+        <div class="email-card-header">
+          <div class="email-num">Email 2 of 2</div>
+          <h3>Don't Run Out</h3>
+          <div class="subject">Subject: Your freezer called. It misses us.</div>
+          <div class="timing">Sends: Day 21 (pack) / Day 37 (box) / Day 67 (XL)</div>
+        </div>
+        <div class="email-frame-wrapper">
+          <iframe src="reorder-2.html" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Prepared by <a href="https://gen7digital.com">Gen 7 Digital</a> for The Sausage Boss</p>
+    <p style="margin-top: 8px; font-size: 12px; color: #444;">Scroll horizontally within each flow to see all emails. Click into emails to interact.</p>
+  </div>
+
+  <script>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll('.flow-section');
+    const navLinks = document.querySelectorAll('.nav a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.nav a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
