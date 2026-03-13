@@ -17,16 +17,17 @@
     .nav a { padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #888; text-decoration: none; border: 1px solid #333; transition: all 0.2s; }
     .nav a:hover, .nav a.active { color: #fff; border-color: #c9511e; background: rgba(201, 81, 30, 0.15); }
 
-    .flow-section { padding: 48px 0 24px; margin: 0 auto; }
-    .flow-header { margin: 0 auto 24px; padding: 0 40px 16px; border-bottom: 1px solid #222; max-width: 1400px; }
+    .flow-section { padding: 48px 0 24px; }
+    .flow-inner { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
+    .flow-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #222; }
     .flow-header h2 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
     .flow-header .flow-meta { display: flex; gap: 16px; flex-wrap: wrap; }
     .flow-header .flow-meta span { font-size: 13px; color: #888; }
     .flow-header .flow-meta .tag { background: #222; padding: 2px 8px; border-radius: 4px; }
     .flow-header .flow-meta .tag-offer { background: rgba(201, 81, 30, 0.2); color: #c9511e; }
 
-    .email-grid { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 0 40px 24px; max-width: 1400px; margin: 0 auto; }
-    .email-card { flex: 0 0 auto; width: 380px; }
+    .email-grid { display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-start; }
+    .email-card { flex: 0 0 auto; width: 600px; }
     .email-card-header { background: #1a1a1a; border: 1px solid #333; border-bottom: none; border-radius: 12px 12px 0 0; padding: 16px; display: flex; align-items: flex-start; gap: 8px; }
     .email-card-info { flex: 1; min-width: 0; }
     .email-card-header .email-num { font-size: 11px; font-weight: 700; color: #c9511e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
@@ -39,16 +40,16 @@
     .copy-btn.copied { background: #2d8a4e; border-color: #2d8a4e; color: #fff; }
 
     .email-frame-wrapper { border: 1px solid #333; border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; background: #fff; }
-    .email-frame-wrapper iframe { width: 100%; height: 860px; border: none; display: block; }
+    .email-frame-wrapper iframe { width: 100%; height: 900px; border: none; display: block; }
 
     .footer { padding: 40px 24px; text-align: center; border-top: 1px solid #222; margin-top: 40px; }
     .footer p { font-size: 13px; color: #666; }
     .footer a { color: #c9511e; text-decoration: none; }
 
-    @media (max-width: 900px) {
-      .email-grid { padding: 0 16px 24px; }
-      .flow-header { padding: 0 16px 16px; }
-      .email-card { width: 100%; max-width: 420px; }
+    @media (max-width: 1340px) {
+      .email-card { width: 100%; max-width: 600px; }
+      .email-grid { justify-content: center; }
+      .flow-inner { padding: 0 16px; }
     }
   </style>
 </head>
@@ -72,56 +73,58 @@
 
   <!-- Welcome Series -->
   <section class="flow-section" id="welcome">
-    <div class="flow-header">
-      <h2>Welcome Series</h2>
-      <div class="flow-meta">
-        <span class="tag">Pre-Purchase</span>
-        <span class="tag tag-offer">10% OFF</span>
-        <span>Trigger: Added to email list</span>
-        <span>3 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 3</div>
-            <h3>Welcome to the Boss Club</h3>
-            <div class="subject">Subject: Welcome to the family, [Name]</div>
-            <div class="timing">Sends: Immediately</div>
-          </div>
-          <button class="copy-btn" data-file="welcome-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="welcome-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Welcome Series</h2>
+        <div class="flow-meta">
+          <span class="tag">Pre-Purchase</span>
+          <span class="tag tag-offer">10% OFF</span>
+          <span>Trigger: Added to email list</span>
+          <span>3 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 3</div>
-            <h3>The Sausage That Broke the Internet</h3>
-            <div class="subject">Subject: This sausage went viral for a reason</div>
-            <div class="timing">Sends: Day 1</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 3</div>
+              <h3>Welcome to the Boss Club</h3>
+              <div class="subject">Subject: Welcome to the family, [Name]</div>
+              <div class="timing">Sends: Immediately</div>
+            </div>
+            <button class="copy-btn" data-file="welcome-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="welcome-2.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="welcome-2.html" loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 3 of 3</div>
-            <h3>Your 10% Off Expires Soon</h3>
-            <div class="subject">Subject: Last chance for 10% off, [Name]</div>
-            <div class="timing">Sends: Day 3</div>
+          <div class="email-frame-wrapper">
+            <iframe src="welcome-1.html" loading="lazy"></iframe>
           </div>
-          <button class="copy-btn" data-file="welcome-3.html">Copy HTML</button>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="welcome-3.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 3</div>
+              <h3>The Sausage That Broke the Internet</h3>
+              <div class="subject">Subject: This sausage went viral for a reason</div>
+              <div class="timing">Sends: Day 1</div>
+            </div>
+            <button class="copy-btn" data-file="welcome-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="welcome-2.html" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 3 of 3</div>
+              <h3>Your 10% Off Expires Soon</h3>
+              <div class="subject">Subject: Last chance for 10% off, [Name]</div>
+              <div class="timing">Sends: Day 3</div>
+            </div>
+            <button class="copy-btn" data-file="welcome-3.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="welcome-3.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -129,56 +132,58 @@
 
   <!-- Abandoned Cart -->
   <section class="flow-section" id="abandoned-cart">
-    <div class="flow-header">
-      <h2>Abandoned Cart</h2>
-      <div class="flow-meta">
-        <span class="tag">Pre-Purchase</span>
-        <span class="tag tag-offer">10% OFF (Email 2 & 3)</span>
-        <span>Trigger: Added to Cart (custom event)</span>
-        <span>3 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 3</div>
-            <h3>You Left Some Boss-Level Flavor Behind</h3>
-            <div class="subject">Subject: Your cart is getting cold, [Name]</div>
-            <div class="timing">Sends: 1 hour after cart abandon</div>
-          </div>
-          <button class="copy-btn" data-file="abandoned-cart-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="abandoned-cart-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Abandoned Cart</h2>
+        <div class="flow-meta">
+          <span class="tag">Pre-Purchase</span>
+          <span class="tag tag-offer">10% OFF (Email 2 & 3)</span>
+          <span>Trigger: Added to Cart (custom event)</span>
+          <span>3 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 3</div>
-            <h3>Still Thinking About It?</h3>
-            <div class="subject">Subject: Good taste shouldn't wait</div>
-            <div class="timing">Sends: 24 hours</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 3</div>
+              <h3>You Left Some Boss-Level Flavor Behind</h3>
+              <div class="subject">Subject: Your cart is getting cold, [Name]</div>
+              <div class="timing">Sends: 1 hour after cart abandon</div>
+            </div>
+            <button class="copy-btn" data-file="abandoned-cart-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="abandoned-cart-2.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="abandoned-cart-2.html" loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 3 of 3</div>
-            <h3>Last Call, Boss</h3>
-            <div class="subject">Subject: Final reminder: your sausages won't wait forever</div>
-            <div class="timing">Sends: 48 hours</div>
+          <div class="email-frame-wrapper">
+            <iframe src="abandoned-cart-1.html" loading="lazy"></iframe>
           </div>
-          <button class="copy-btn" data-file="abandoned-cart-3.html">Copy HTML</button>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="abandoned-cart-3.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 3</div>
+              <h3>Still Thinking About It?</h3>
+              <div class="subject">Subject: Good taste shouldn't wait</div>
+              <div class="timing">Sends: 24 hours</div>
+            </div>
+            <button class="copy-btn" data-file="abandoned-cart-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="abandoned-cart-2.html" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 3 of 3</div>
+              <h3>Last Call, Boss</h3>
+              <div class="subject">Subject: Final reminder: your sausages won't wait forever</div>
+              <div class="timing">Sends: 48 hours</div>
+            </div>
+            <button class="copy-btn" data-file="abandoned-cart-3.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="abandoned-cart-3.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -186,56 +191,58 @@
 
   <!-- Abandoned Checkout -->
   <section class="flow-section" id="abandoned-checkout">
-    <div class="flow-header">
-      <h2>Abandoned Checkout</h2>
-      <div class="flow-meta">
-        <span class="tag">Pre-Purchase</span>
-        <span class="tag tag-offer">15% OFF (Email 2 & 3)</span>
-        <span>Trigger: Started Checkout</span>
-        <span>3 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 3</div>
-            <h3>You're One Step Away</h3>
-            <div class="subject">Subject: You were so close, [Name]</div>
-            <div class="timing">Sends: 30 minutes</div>
-          </div>
-          <button class="copy-btn" data-file="abandoned-checkout-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="abandoned-checkout-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Abandoned Checkout</h2>
+        <div class="flow-meta">
+          <span class="tag">Pre-Purchase</span>
+          <span class="tag tag-offer">15% OFF (Email 2 & 3)</span>
+          <span>Trigger: Started Checkout</span>
+          <span>3 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 3</div>
-            <h3>We Saved Your Order + 15% Off</h3>
-            <div class="subject">Subject: Here's 15% off to finish your order</div>
-            <div class="timing">Sends: 12 hours</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 3</div>
+              <h3>You're One Step Away</h3>
+              <div class="subject">Subject: You were so close, [Name]</div>
+              <div class="timing">Sends: 30 minutes</div>
+            </div>
+            <button class="copy-btn" data-file="abandoned-checkout-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="abandoned-checkout-2.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="abandoned-checkout-2.html" loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 3 of 3</div>
-            <h3>Final Call: 15% Off Expires</h3>
-            <div class="subject">Subject: Last chance: 15% off disappears tonight</div>
-            <div class="timing">Sends: 36 hours</div>
+          <div class="email-frame-wrapper">
+            <iframe src="abandoned-checkout-1.html" loading="lazy"></iframe>
           </div>
-          <button class="copy-btn" data-file="abandoned-checkout-3.html">Copy HTML</button>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="abandoned-checkout-3.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 3</div>
+              <h3>We Saved Your Order + 15% Off</h3>
+              <div class="subject">Subject: Here's 15% off to finish your order</div>
+              <div class="timing">Sends: 12 hours</div>
+            </div>
+            <button class="copy-btn" data-file="abandoned-checkout-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="abandoned-checkout-2.html" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 3 of 3</div>
+              <h3>Final Call: 15% Off Expires</h3>
+              <div class="subject">Subject: Last chance: 15% off disappears tonight</div>
+              <div class="timing">Sends: 36 hours</div>
+            </div>
+            <button class="copy-btn" data-file="abandoned-checkout-3.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="abandoned-checkout-3.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -243,42 +250,44 @@
 
   <!-- Browse Abandonment -->
   <section class="flow-section" id="browse-abandon">
-    <div class="flow-header">
-      <h2>Browse Abandonment</h2>
-      <div class="flow-meta">
-        <span class="tag">Pre-Purchase</span>
-        <span class="tag">No Offer</span>
-        <span>Trigger: Viewed Product</span>
-        <span>2 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 2</div>
-            <h3>Caught You Looking...</h3>
-            <div class="subject">Subject: Still thinking about [Product Name]?</div>
-            <div class="timing">Sends: 2 hours</div>
-          </div>
-          <button class="copy-btn" data-file="browse-abandon-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="browse-abandon-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Browse Abandonment</h2>
+        <div class="flow-meta">
+          <span class="tag">Pre-Purchase</span>
+          <span class="tag">No Offer</span>
+          <span>Trigger: Viewed Product</span>
+          <span>2 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 2</div>
-            <h3>Everyone's Talking About It</h3>
-            <div class="subject">Subject: [Product Name] is a fan favorite</div>
-            <div class="timing">Sends: 24 hours</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 2</div>
+              <h3>Caught You Looking...</h3>
+              <div class="subject">Subject: Still thinking about [Product Name]?</div>
+              <div class="timing">Sends: 2 hours</div>
+            </div>
+            <button class="copy-btn" data-file="browse-abandon-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="browse-abandon-2.html">Copy HTML</button>
+          <div class="email-frame-wrapper">
+            <iframe src="browse-abandon-1.html" loading="lazy"></iframe>
+          </div>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="browse-abandon-2.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 2</div>
+              <h3>Everyone's Talking About It</h3>
+              <div class="subject">Subject: [Product Name] is a fan favorite</div>
+              <div class="timing">Sends: 24 hours</div>
+            </div>
+            <button class="copy-btn" data-file="browse-abandon-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="browse-abandon-2.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -286,42 +295,44 @@
 
   <!-- Post-Purchase: New Customer -->
   <section class="flow-section" id="post-purchase-new">
-    <div class="flow-header">
-      <h2>Post-Purchase: New Customer</h2>
-      <div class="flow-meta">
-        <span class="tag">Post-Purchase</span>
-        <span class="tag">No Offer</span>
-        <span>Trigger: Placed Order (first time)</span>
-        <span>2 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 2</div>
-            <h3>Welcome to the Family, Boss</h3>
-            <div class="subject">Subject: Your order is confirmed! Here's what's next.</div>
-            <div class="timing">Sends: Immediately</div>
-          </div>
-          <button class="copy-btn" data-file="post-purchase-new-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="post-purchase-new-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Post-Purchase: New Customer</h2>
+        <div class="flow-meta">
+          <span class="tag">Post-Purchase</span>
+          <span class="tag">No Offer</span>
+          <span>Trigger: Placed Order (first time)</span>
+          <span>2 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 2</div>
-            <h3>Cook Like a Boss</h3>
-            <div class="subject">Subject: How to cook your sausages like a pro</div>
-            <div class="timing">Sends: Day 3</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 2</div>
+              <h3>Welcome to the Family, Boss</h3>
+              <div class="subject">Subject: Your order is confirmed! Here's what's next.</div>
+              <div class="timing">Sends: Immediately</div>
+            </div>
+            <button class="copy-btn" data-file="post-purchase-new-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="post-purchase-new-2.html">Copy HTML</button>
+          <div class="email-frame-wrapper">
+            <iframe src="post-purchase-new-1.html" loading="lazy"></iframe>
+          </div>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="post-purchase-new-2.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 2</div>
+              <h3>Cook Like a Boss</h3>
+              <div class="subject">Subject: How to cook your sausages like a pro</div>
+              <div class="timing">Sends: Day 3</div>
+            </div>
+            <button class="copy-btn" data-file="post-purchase-new-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="post-purchase-new-2.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -329,42 +340,44 @@
 
   <!-- Post-Purchase: Returning Customer -->
   <section class="flow-section" id="post-purchase-returning">
-    <div class="flow-header">
-      <h2>Post-Purchase: Returning Customer</h2>
-      <div class="flow-meta">
-        <span class="tag">Post-Purchase</span>
-        <span class="tag">No Offer</span>
-        <span>Trigger: Placed Order (2+ times)</span>
-        <span>2 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 2</div>
-            <h3>Thanks for Coming Back, Boss</h3>
-            <div class="subject">Subject: Order confirmed! You know the drill.</div>
-            <div class="timing">Sends: Immediately</div>
-          </div>
-          <button class="copy-btn" data-file="post-purchase-returning-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="post-purchase-returning-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Post-Purchase: Returning Customer</h2>
+        <div class="flow-meta">
+          <span class="tag">Post-Purchase</span>
+          <span class="tag">No Offer</span>
+          <span>Trigger: Placed Order (2+ times)</span>
+          <span>2 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 2</div>
-            <h3>New Ways to Enjoy Your Favorites</h3>
-            <div class="subject">Subject: Have you tried this recipe yet?</div>
-            <div class="timing">Sends: Day 3</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 2</div>
+              <h3>Thanks for Coming Back, Boss</h3>
+              <div class="subject">Subject: Order confirmed! You know the drill.</div>
+              <div class="timing">Sends: Immediately</div>
+            </div>
+            <button class="copy-btn" data-file="post-purchase-returning-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="post-purchase-returning-2.html">Copy HTML</button>
+          <div class="email-frame-wrapper">
+            <iframe src="post-purchase-returning-1.html" loading="lazy"></iframe>
+          </div>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="post-purchase-returning-2.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 2</div>
+              <h3>New Ways to Enjoy Your Favorites</h3>
+              <div class="subject">Subject: Have you tried this recipe yet?</div>
+              <div class="timing">Sends: Day 3</div>
+            </div>
+            <button class="copy-btn" data-file="post-purchase-returning-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="post-purchase-returning-2.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -372,42 +385,44 @@
 
   <!-- Reorder -->
   <section class="flow-section" id="reorder">
-    <div class="flow-header">
-      <h2>Reorder Flow</h2>
-      <div class="flow-meta">
-        <span class="tag">Post-Purchase</span>
-        <span class="tag">No Offer</span>
-        <span>Trigger: Placed Order + time delay (14/30/60 days by product)</span>
-        <span>2 Emails</span>
-      </div>
-    </div>
-    <div class="email-grid">
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 1 of 2</div>
-            <h3>Ready for Round Two?</h3>
-            <div class="subject">Subject: Time to fire up the grill again?</div>
-            <div class="timing">Sends: Day 14 (pack) / Day 30 (box) / Day 60 (XL)</div>
-          </div>
-          <button class="copy-btn" data-file="reorder-1.html">Copy HTML</button>
-        </div>
-        <div class="email-frame-wrapper">
-          <iframe src="reorder-1.html" loading="lazy"></iframe>
+    <div class="flow-inner">
+      <div class="flow-header">
+        <h2>Reorder Flow</h2>
+        <div class="flow-meta">
+          <span class="tag">Post-Purchase</span>
+          <span class="tag">No Offer</span>
+          <span>Trigger: Placed Order + time delay (14/30/60 days by product)</span>
+          <span>2 Emails</span>
         </div>
       </div>
-      <div class="email-card">
-        <div class="email-card-header">
-          <div class="email-card-info">
-            <div class="email-num">Email 2 of 2</div>
-            <h3>Don't Run Out</h3>
-            <div class="subject">Subject: Your freezer called. It misses us.</div>
-            <div class="timing">Sends: Day 21 (pack) / Day 37 (box) / Day 67 (XL)</div>
+      <div class="email-grid">
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 1 of 2</div>
+              <h3>Ready for Round Two?</h3>
+              <div class="subject">Subject: Time to fire up the grill again?</div>
+              <div class="timing">Sends: Day 14 (pack) / Day 30 (box) / Day 60 (XL)</div>
+            </div>
+            <button class="copy-btn" data-file="reorder-1.html">Copy HTML</button>
           </div>
-          <button class="copy-btn" data-file="reorder-2.html">Copy HTML</button>
+          <div class="email-frame-wrapper">
+            <iframe src="reorder-1.html" loading="lazy"></iframe>
+          </div>
         </div>
-        <div class="email-frame-wrapper">
-          <iframe src="reorder-2.html" loading="lazy"></iframe>
+        <div class="email-card">
+          <div class="email-card-header">
+            <div class="email-card-info">
+              <div class="email-num">Email 2 of 2</div>
+              <h3>Don't Run Out</h3>
+              <div class="subject">Subject: Your freezer called. It misses us.</div>
+              <div class="timing">Sends: Day 21 (pack) / Day 37 (box) / Day 67 (XL)</div>
+            </div>
+            <button class="copy-btn" data-file="reorder-2.html">Copy HTML</button>
+          </div>
+          <div class="email-frame-wrapper">
+            <iframe src="reorder-2.html" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -442,7 +457,7 @@
       fetch(file).then(r => r.text()).then(html => { htmlCache[file] = html; });
     });
 
-    // Copy HTML using cached content (synchronous = clipboard works)
+    // Copy HTML using cached content
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const file = btn.dataset.file;
@@ -455,13 +470,22 @@
           return;
         }
 
-        const textarea = document.createElement('textarea');
-        textarea.value = html;
-        textarea.style.cssText = 'position:fixed;opacity:0;left:-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+        // Use navigator.clipboard on secure contexts, execCommand fallback
+        const doCopy = () => {
+          const textarea = document.createElement('textarea');
+          textarea.value = html;
+          textarea.style.cssText = 'position:fixed;opacity:0;left:-9999px';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(html).catch(doCopy);
+        } else {
+          doCopy();
+        }
 
         btn.textContent = 'Copied!';
         btn.classList.add('copied');
