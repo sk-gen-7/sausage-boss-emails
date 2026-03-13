@@ -434,14 +434,42 @@
 
     sections.forEach(section => observer.observe(section));
 
-    // Copy HTML functionality
+    // Copy HTML functionality - reads from the iframe's document (same origin on GitHub Pages)
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', async () => {
         const file = btn.dataset.file;
+        const card = btn.closest('.email-card');
+        const iframe = card.querySelector('iframe');
+
         try {
-          const res = await fetch(file);
-          const html = await res.text();
-          await navigator.clipboard.writeText(html);
+          let html = '';
+
+          // Try reading from iframe document (same-origin)
+          if (iframe && iframe.contentDocument) {
+            html = '<!DOCTYPE html>\n' + iframe.contentDocument.documentElement.outerHTML;
+          }
+
+          // Fallback to fetch if iframe read fails or is empty
+          if (!html || html.length < 100) {
+            const res = await fetch(file);
+            html = await res.text();
+          }
+
+          // Try clipboard API first
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(html);
+          } else {
+            // Fallback for non-HTTPS or older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = html;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+          }
+
           btn.textContent = 'Copied!';
           btn.classList.add('copied');
           setTimeout(() => {
@@ -449,18 +477,11 @@
             btn.classList.remove('copied');
           }, 2000);
         } catch (err) {
-          // Fallback for older browsers
-          const textarea = document.createElement('textarea');
-          textarea.value = await (await fetch(file)).text();
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textarea);
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
+          // Last resort: open the raw file in a new tab so they can copy manually
+          btn.textContent = 'Opening...';
+          window.open(file, '_blank');
           setTimeout(() => {
             btn.textContent = 'Copy HTML';
-            btn.classList.remove('copied');
           }, 2000);
         }
       });
