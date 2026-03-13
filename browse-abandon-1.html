@@ -150,40 +150,39 @@
         </td>
       </tr>
 
-      <!-- FOOTER: Dark bg -->
+      <!-- ============ FOOTER ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 40px 40px 24px 40px; text-align: center;" class="padding-mobile">
-          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="width: 120px; height: auto;">
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #1a1a1a; padding: 0 40px 24px 40px; text-align: center;" class="padding-mobile">
-          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-style: italic; line-height: 24px; color: #e8e0d6;">Premium Sausage. Unforgettable Flavor.</p>
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #1a1a1a; padding: 0 40px 24px 40px; text-align: center;" class="padding-mobile">
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" class="footer-nav">
+        <td style="background-color: #1a1a1a; padding: 32px 40px 16px 40px; text-align: center;" class="padding-mobile">
+          <a href="https://thesausagebosssausage.com" target="_blank">
+            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="display: inline-block; width: 120px; max-width: 120px; height: auto; margin-bottom: 16px;">
+          </a>
+          <p style="margin: 0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 13px; line-height: 18px; color: #888888;">
+            Premium Sausage. Unforgettable Flavor.
+          </p>
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;" class="footer-nav">
             <tr>
               <td style="padding: 0 8px;">
-                <a href="#" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #e8e0d6; text-decoration: none;">Shop</a>
+                <a href="https://thesausagebosssausage.com/collections/all" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Shop</a>
               </td>
-              <td class="sep" style="padding: 0; color: #888888; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">|</td>
+              <td class="sep" style="color: #555555; font-family: Arial; font-size: 12px;">&bull;</td>
               <td style="padding: 0 8px;">
-                <a href="#" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #e8e0d6; text-decoration: none;">Recipes</a>
+                <a href="https://thesausagebosssausage.com/blogs/recipes" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Recipes</a>
               </td>
-              <td class="sep" style="padding: 0; color: #888888; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">|</td>
+              <td class="sep" style="color: #555555; font-family: Arial; font-size: 12px;">&bull;</td>
               <td style="padding: 0 8px;">
-                <a href="#" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #e8e0d6; text-decoration: none;">Our Story</a>
+                <a href="https://thesausagebosssausage.com/pages/about-us" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Our Story</a>
               </td>
             </tr>
           </table>
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #1a1a1a; padding: 0 40px 40px 40px; text-align: center;" class="padding-mobile">
-          <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #888888;">{% organization_name %} | {% organization_address %}</p>
-          <p style="margin: 8px 0 0 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #888888;"><a href="{% manage_preferences_url %}" style="color: #888888; text-decoration: underline;">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{% unsubscribe_url %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a></p>
+          <p style="margin: 24px 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #666666;">
+            {{ organization.name }} | {{ organization.address }}
+          </p>
+          <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">
+            <a href="{% web_view_link %}" style="color: #888888; text-decoration: underline;">View in Browser</a>
+          </p>
+          <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">
+            No longer want to receive these emails? <a href="{% unsubscribe_link %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a>
+          </p>
         </td>
       </tr>
 
