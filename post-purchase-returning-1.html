@@ -81,55 +81,15 @@
           </td>
         </tr>
 
-        <!-- Order Items Card -->
+        <!-- Order Confirmation -->
         <tr>
           <td style="background-color: #f5f0eb; padding: 0 40px 16px 40px;" class="padding-mobile">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
               <tr>
-                <td style="padding: 20px 16px 8px 16px;">
-                  <p style="margin: 0 0 12px 0; font-family: 'Alegreya', Georgia, serif; font-size: 18px; font-weight: 700; color: #1a1a1a; text-transform: uppercase;">Your Order</p>
-                </td>
-              </tr>
-              {% for item in event.Items %}
-              <tr>
-                <td style="padding: 0 16px;">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                    <tr>
-                      <td width="80" style="padding: 12px;">
-                        <img src="{{ item.ImageURL }}" width="80" alt="{{ item.ProductName }}" style="display: block; border-radius: 4px;">
-                      </td>
-                      <td style="padding: 12px; font-family: Arial, Helvetica, sans-serif; vertical-align: middle;">
-                        <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 700; color: #1a1a1a;">{{ item.ProductName }}</p>
-                        <p style="margin: 0; font-size: 14px; color: #666666;">Qty: {{ item.Quantity }} | ${{ item.RowTotal|floatformat:2 }}</p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-              {% endfor %}
-              <!-- Divider -->
-              <tr>
-                <td style="padding: 8px 28px 0 28px;">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                    <tr>
-                      <td style="border-top: 1px solid #e8e0d6; font-size: 1px; line-height: 1px;">&nbsp;</td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-              <!-- Order Total -->
-              <tr>
-                <td style="padding: 12px 28px 20px 28px;">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                    <tr>
-                      <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">
-                        Total
-                      </td>
-                      <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a; text-align: right;">
-                        ${{ event.Value|floatformat:2 }}
-                      </td>
-                    </tr>
-                  </table>
+                <td style="padding: 24px; text-align: center;">
+                  <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 24px; color: #666666;">
+                    Your order is on its way! You'll receive a shipping confirmation email with tracking details soon.
+                  </p>
                 </td>
               </tr>
             </table>
@@ -152,10 +112,11 @@
             <p style="margin: 0 0 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #666666;">
               <a href="https://thesausagebosssausage.com" style="color: #c9511e; text-decoration: none;">Shop</a> &nbsp;&bull;&nbsp;
               <a href="https://thesausagebosssausage.com/blogs/recipes" style="color: #c9511e; text-decoration: none;">Recipes</a> &nbsp;&bull;&nbsp;
-              <a href="https://thesausagebosssausage.com/pages/about" style="color: #c9511e; text-decoration: none;">Our Story</a>
+              <a href="https://thesausagebosssausage.com/pages/about-us" style="color: #c9511e; text-decoration: none;">Our Story</a>
             </p>
             <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">{{ organization.name }} | {{ organization.address }}</p>
-            <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;"><a href="{% unsubscribe %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{% manage_preferences %}" style="color: #888888; text-decoration: underline;">Manage Preferences</a></p>
+            <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;"><a href="{% web_view_link %}" style="color: #888888; text-decoration: underline;">View in Browser</a></p>
+            <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">If you'd no longer like to receive emails, <a href="{% unsubscribe_link %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a>.</p>
           </td>
         </tr>
 

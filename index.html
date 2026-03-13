@@ -13,21 +13,21 @@
     .header p { font-size: 14px; color: #888; }
     .header .badge { display: inline-block; background: #c9511e; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-top: 12px; }
 
-    .nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 20px 24px; border-bottom: 1px solid #222; background: #0a0a0a; position: sticky; top: 0; z-index: 100; }
+    .nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 16px 24px; border-bottom: 1px solid #222; background: #0a0a0a; position: sticky; top: 0; z-index: 100; }
     .nav a { padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #888; text-decoration: none; border: 1px solid #333; transition: all 0.2s; }
     .nav a:hover, .nav a.active { color: #fff; border-color: #c9511e; background: rgba(201, 81, 30, 0.15); }
 
-    .flow-section { padding: 48px 24px 24px; max-width: 100%; margin: 0 auto; }
-    .flow-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #222; max-width: 1400px; margin-left: auto; margin-right: auto; }
+    .flow-section { padding: 48px 0 24px; margin: 0 auto; }
+    .flow-header { margin: 0 auto 24px; padding: 0 40px 16px; border-bottom: 1px solid #222; max-width: 1400px; }
     .flow-header h2 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
     .flow-header .flow-meta { display: flex; gap: 16px; flex-wrap: wrap; }
     .flow-header .flow-meta span { font-size: 13px; color: #888; }
     .flow-header .flow-meta .tag { background: #222; padding: 2px 8px; border-radius: 4px; }
     .flow-header .flow-meta .tag-offer { background: rgba(201, 81, 30, 0.2); color: #c9511e; }
 
-    .email-grid { display: flex; gap: 24px; overflow-x: auto; padding: 0 24px 24px; scroll-snap-type: x mandatory; }
-    .email-card { flex: 0 0 auto; width: 420px; scroll-snap-align: start; }
-    .email-card-header { background: #1a1a1a; border: 1px solid #333; border-bottom: none; border-radius: 12px 12px 0 0; padding: 16px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; }
+    .email-grid { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 0 40px 24px; max-width: 1400px; margin: 0 auto; }
+    .email-card { flex: 0 0 auto; width: 380px; }
+    .email-card-header { background: #1a1a1a; border: 1px solid #333; border-bottom: none; border-radius: 12px 12px 0 0; padding: 16px; display: flex; align-items: flex-start; gap: 8px; }
     .email-card-info { flex: 1; min-width: 0; }
     .email-card-header .email-num { font-size: 11px; font-weight: 700; color: #c9511e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
     .email-card-header h3 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
@@ -39,15 +39,16 @@
     .copy-btn.copied { background: #2d8a4e; border-color: #2d8a4e; color: #fff; }
 
     .email-frame-wrapper { border: 1px solid #333; border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; background: #fff; }
-    .email-frame-wrapper iframe { width: 100%; height: 800px; border: none; display: block; }
+    .email-frame-wrapper iframe { width: 100%; height: 860px; border: none; display: block; }
 
     .footer { padding: 40px 24px; text-align: center; border-top: 1px solid #222; margin-top: 40px; }
     .footer p { font-size: 13px; color: #666; }
     .footer a { color: #c9511e; text-decoration: none; }
 
-    @media (max-width: 768px) {
-      .email-card { width: 340px; }
-      .email-frame-wrapper iframe { height: 600px; }
+    @media (max-width: 900px) {
+      .email-grid { padding: 0 16px 24px; }
+      .flow-header { padding: 0 16px 16px; }
+      .email-card { width: 100%; max-width: 420px; }
     }
   </style>
 </head>
@@ -56,7 +57,7 @@
   <div class="header">
     <h1>The Sausage Boss</h1>
     <p>Email Flows Preview - Client Review</p>
-    <span class="badge">17 Emails | 6 Flows</span>
+    <span class="badge">17 Emails | 7 Flows</span>
   </div>
 
   <nav class="nav">
@@ -414,7 +415,7 @@
 
   <div class="footer">
     <p>Prepared by <a href="https://gen7digital.com">Gen 7 Digital</a> for The Sausage Boss</p>
-    <p style="margin-top: 8px; font-size: 12px; color: #444;">Scroll horizontally within each flow to see all emails. Click "Copy HTML" to copy email code for Klaviyo.</p>
+    <p style="margin-top: 8px; font-size: 12px; color: #444;">Click "Copy HTML" to copy email code for Klaviyo.</p>
   </div>
 
   <script>
@@ -434,36 +435,20 @@
 
     sections.forEach(section => observer.observe(section));
 
-    // Copy HTML functionality - reads from the iframe's document (same origin on GitHub Pages)
+    // Copy HTML - fetches the raw file source
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', async () => {
         const file = btn.dataset.file;
-        const card = btn.closest('.email-card');
-        const iframe = card.querySelector('iframe');
-
         try {
-          let html = '';
+          const res = await fetch(file);
+          const html = await res.text();
 
-          // Try reading from iframe document (same-origin)
-          if (iframe && iframe.contentDocument) {
-            html = '<!DOCTYPE html>\n' + iframe.contentDocument.documentElement.outerHTML;
-          }
-
-          // Fallback to fetch if iframe read fails or is empty
-          if (!html || html.length < 100) {
-            const res = await fetch(file);
-            html = await res.text();
-          }
-
-          // Try clipboard API first
-          if (navigator.clipboard && navigator.clipboard.writeText) {
+          if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(html);
           } else {
-            // Fallback for non-HTTPS or older browsers
             const textarea = document.createElement('textarea');
             textarea.value = html;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
+            textarea.style.cssText = 'position:fixed;opacity:0;left:-9999px';
             document.body.appendChild(textarea);
             textarea.select();
             document.execCommand('copy');
@@ -472,17 +457,11 @@
 
           btn.textContent = 'Copied!';
           btn.classList.add('copied');
-          setTimeout(() => {
-            btn.textContent = 'Copy HTML';
-            btn.classList.remove('copied');
-          }, 2000);
+          setTimeout(() => { btn.textContent = 'Copy HTML'; btn.classList.remove('copied'); }, 2000);
         } catch (err) {
-          // Last resort: open the raw file in a new tab so they can copy manually
-          btn.textContent = 'Opening...';
           window.open(file, '_blank');
-          setTimeout(() => {
-            btn.textContent = 'Copy HTML';
-          }, 2000);
+          btn.textContent = 'Opened';
+          setTimeout(() => { btn.textContent = 'Copy HTML'; }, 2000);
         }
       });
     });

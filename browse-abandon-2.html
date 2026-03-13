@@ -65,14 +65,14 @@
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
               <tr>
                 <td style="text-align: center; padding: 24px 24px 16px 24px;">
-                  <a href="{{ event.URL }}" target="_blank">
-                    <img src="{{ event.ImageURL }}" width="220" alt="{{ event.ProductName }}" style="display: block; margin: 0 auto; max-width: 220px; width: 220px; border-radius: 4px;" class="fluid">
+                  <a href="{{ event.URL|default:'' }}" target="_blank">
+                    <img src="{{ event.ImageURL|default:'' }}" width="220" alt="{{ event.Name|default:'' }}" style="display: block; margin: 0 auto; max-width: 220px; width: 220px; border-radius: 4px;" class="fluid">
                   </a>
                 </td>
               </tr>
               <tr>
                 <td style="padding: 0 24px 4px 24px; text-align: center;">
-                  <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; color: #1a1a1a;">{{ event.ProductName }}</h2>
+                  <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; color: #1a1a1a;">{{ event.Name|default:'' }}</h2>
                 </td>
               </tr>
               <tr>
@@ -156,7 +156,7 @@
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
               <tr>
                 <td style="background-color: #c9511e; border-radius: 4px; text-align: center;">
-                  <a href="{{ event.URL }}" target="_blank" style="display: inline-block; padding: 16px 40px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
+                  <a href="{{ event.URL|default:'' }}" target="_blank" style="display: inline-block; padding: 16px 40px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
                     Shop Now
                   </a>
                 </td>
@@ -173,12 +173,14 @@
             <p style="margin: 0 0 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #666666;">
               <a href="https://thesausagebosssausage.com" style="color: #c9511e; text-decoration: none;">Shop</a> &nbsp;&bull;&nbsp;
               <a href="https://thesausagebosssausage.com/blogs/recipes" style="color: #c9511e; text-decoration: none;">Recipes</a> &nbsp;&bull;&nbsp;
-              <a href="https://thesausagebosssausage.com/pages/about" style="color: #c9511e; text-decoration: none;">Our Story</a>
+              <a href="https://thesausagebosssausage.com/pages/about-us" style="color: #c9511e; text-decoration: none;">Our Story</a>
             </p>
             <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">{{ organization.name }} | {{ organization.address }}</p>
+            <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">
+              <a href="{% web_view_link %}" style="color: #888888; text-decoration: underline;">View in Browser</a>
+            </p>
             <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">
-              <a href="{% unsubscribe %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a> &nbsp;|&nbsp;
-              <a href="{% manage_preferences %}" style="color: #888888; text-decoration: underline;">Manage Preferences</a>
+              If you'd no longer like to receive emails, <a href="{% unsubscribe_link %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a>.
             </p>
           </td>
         </tr>

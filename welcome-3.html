@@ -213,14 +213,17 @@
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="https://thesausagebosssausage.com/pages/recipes" target="_blank" style="color:#c9511e; text-decoration:none; font-weight:bold;">Recipes</a>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="https://thesausagebosssausage.com/pages/our-story" target="_blank" style="color:#c9511e; text-decoration:none; font-weight:bold;">Our Story</a>
+                <a href="https://thesausagebosssausage.com/pages/about-us" target="_blank" style="color:#c9511e; text-decoration:none; font-weight:bold;">Our Story</a>
               </p>
               <!-- Compliance -->
               <p style="margin:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:1.5; color:#888888;">
                 {{ organization.name }} | {{ organization.address }}
               </p>
-              <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:1.5; color:#888888;">
-                <a href="{% unsubscribe %}" style="color:#888888; text-decoration:underline;">Unsubscribe</a> | <a href="{% manage_preferences %}" style="color:#888888; text-decoration:underline;">Manage Preferences</a>
+              <p style="margin:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:16px; color:#555555;">
+                <a href="{% web_view_link %}" style="color:#888888; text-decoration:underline;">View in Browser</a>
+              </p>
+              <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:16px; color:#555555;">
+                If you'd no longer like to receive emails, <a href="{% unsubscribe_link %}" style="color:#888888; text-decoration:underline;">Unsubscribe</a>.
               </p>
             </td>
           </tr>

@@ -87,31 +87,16 @@
         <td style="background-color: #f5f0eb; padding: 32px 40px 0 40px;" class="padding-mobile">
           <p style="margin: 0 0 16px 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; color: #1a1a1a; text-align: center; text-transform: uppercase;">Your Cart</p>
           <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
-            {% for item in event.Items %}
             <tr>
-              <td width="80" style="padding: 12px;">
-                <a href="{{ item.ProductURL }}" target="_blank">
-                  <img src="{{ item.ImageURL }}" width="80" alt="{{ item.ProductName }}" style="display: block; border-radius: 4px;">
+              <td style="text-align: center; padding: 24px;">
+                <a href="{{ event.URL|default:'' }}" target="_blank">
+                  <img src="{{ event.ImageURL|default:'' }}" width="280" alt="{{ event.Name|default:'' }}" style="display: block; margin: 0 auto; max-width: 280px; width: 280px; border-radius: 4px;">
                 </a>
               </td>
-              <td style="padding: 12px; font-family: Arial, Helvetica, sans-serif; vertical-align: middle;">
-                <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 700; color: #1a1a1a;">{{ item.ProductName }}</p>
-                {% if item.Variant and item.Variant != "Default Title" %}
-                <p style="margin: 0 0 4px 0; font-size: 12px; color: #888888;">{{ item.Variant }}</p>
-                {% endif %}
-                <p style="margin: 0; font-size: 14px; color: #666666;">Qty: {{ item.Quantity }} | ${{ item.RowTotal|floatformat:2 }}</p>
-              </td>
             </tr>
-            {% endfor %}
-            <!-- CART TOTAL -->
             <tr>
-              <td colspan="2" style="padding: 16px 12px; border-top: 1px solid #e8e0d6;">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                  <tr>
-                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">Cart Total</td>
-                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #1a1a1a; text-align: right;">${{ event.Value|floatformat:2 }}</td>
-                  </tr>
-                </table>
+              <td style="padding: 0 24px 20px 24px; text-align: center;">
+                <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; color: #1a1a1a;">{{ event.Name|default:'' }}</h2>
               </td>
             </tr>
           </table>
@@ -151,7 +136,7 @@
           <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
             <tr>
               <td style="border-radius: 4px; background-color: #c9511e; text-align: center;">
-                <a href="{{ event.CheckoutURL }}" target="_blank" style="display: inline-block; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;">Complete Your Order</a>
+                <a href="{{ event.URL|default:'' }}" target="_blank" style="display: inline-block; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;">Complete Your Order</a>
               </td>
             </tr>
           </table>
@@ -175,12 +160,13 @@
               </td>
               <td style="color: #666666; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">|</td>
               <td style="padding: 0 12px;">
-                <a href="https://thesausagebosssausage.com/pages/about" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #e8e0d6; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Our Story</a>
+                <a href="https://thesausagebosssausage.com/pages/about-us" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #e8e0d6; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Our Story</a>
               </td>
             </tr>
           </table>
           <p style="margin: 24px 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 1.5; color: #888888;">{{ organization.name }} | {{ organization.address }}</p>
-          <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 1.5; color: #888888;"><a href="{% unsubscribe %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{% manage_preferences %}" style="color: #888888; text-decoration: underline;">Manage Preferences</a></p>
+          <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;"><a href="{% web_view_link %}" style="color: #888888; text-decoration: underline;">View in Browser</a></p>
+          <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">If you'd no longer like to receive emails, <a href="{% unsubscribe_link %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a>.</p>
         </td>
       </tr>
 
