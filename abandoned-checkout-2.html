@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>Here's 15% off to finish your order</title>
   <!--[if mso]>
   <noscript>
@@ -15,21 +17,37 @@
       </o:OfficeDocumentSettings>
     </xml>
   </noscript>
+  <style>
+    body, table, td, p, h1, h2, h3, a { font-family: Georgia, 'Times New Roman', serif !important; }
+  </style>
   <![endif]-->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700;800&display=swap');
+    @font-face {
+      font-family: 'Alegreya';
+      font-weight: 700;
+      font-style: normal;
+      src: url('https://fonts.gstatic.com/s/alegreya/v35/4UaGrEBBsBhlBjvfkSPA4u3jwA.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Alegreya';
+      font-weight: 800;
+      font-style: normal;
+      src: url('https://fonts.gstatic.com/s/alegreya/v35/4UaGrEBBsBhlBjvfkSPA4u3jwA.woff2') format('woff2');
+    }
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     a, a:visited, a:hover, a:active { color: inherit; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #f5f0eb; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 480px) {
       .email-container { width: 100% !important; }
       .fluid { max-width: 100% !important; height: auto !important; }
       .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
-      .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
-      .mobile-center { text-align: center !important; }
-      .cta-btn { width: 100% !important; max-width: 320px !important; }
+      .padding-mobile { padding-left: 20px !important; padding-right: 20px !important; }
+      .hero-text { font-size: 26px !important; line-height: 32px !important; }
+      .section-heading { font-size: 20px !important; }
+      .footer-nav a { display: inline-block !important; }
+      .sep { display: none !important; }
     }
   </style>
 </head>
@@ -42,40 +60,52 @@
 
     <!-- HEADER -->
     <tr>
-      <td style="background-color: #1a1a1a; padding: 16px 0; text-align: center;">
+      <td style="background-color: #1a1a1a; padding: 16px 40px; text-align: center;" class="padding-mobile">
         <a href="https://thesausagebosssausage.com" target="_blank">
           <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="180" alt="The Sausage Boss" style="display: inline-block; max-width: 180px; height: auto;">
         </a>
       </td>
     </tr>
 
-    <!-- DARK HERO SECTION -->
+    <!-- HEADLINE -->
     <tr>
-      <td style="background-color: #1a1a1a; padding: 40px 40px 32px 40px; text-align: center;" class="mobile-padding">
-        <h1 style="margin: 0 0 16px 0; font-family: 'Alegreya', Georgia, serif; font-size: 32px; line-height: 38px; font-weight: 800; color: #c9511e; text-align: center; text-transform: uppercase;">We Saved Your Order</h1>
-        <p style="margin: 0 0 32px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #e8e0d6; text-align: center;">We get it, life gets busy. But we really want you to experience boss-level flavor. Here's a little something to sweeten the deal.</p>
+      <td style="background-color: #1a1a1a; padding: 40px 40px 16px 40px; text-align: center;" class="padding-mobile">
+        <h1 class="hero-text" style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 32px; line-height: 38px; font-weight: 800; color: #c9511e; text-align: center; text-transform: uppercase;">We Saved Your Order</h1>
+      </td>
+    </tr>
+
+    <!-- BODY TEXT -->
+    <tr>
+      <td style="background-color: #1a1a1a; padding: 8px 40px 32px 40px; text-align: center;" class="padding-mobile">
+        <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 26px; color: #e8e0d6;">We get it, life gets busy. But we really want you to experience boss-level flavor. Here's a little something to sweeten the deal.</p>
       </td>
     </tr>
 
     <!-- COUPON BLOCK -->
     <tr>
-      <td style="background-color: #1a1a1a; padding: 0 40px 40px 40px;" class="mobile-padding">
+      <td style="background-color: #1a1a1a; padding: 0 40px 48px 40px;" class="padding-mobile">
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
           <tr>
-            <td style="background-color: #2a2a2a; border: 2px dashed #c9511e; border-radius: 4px; padding: 28px 20px; text-align: center;">
-              <p style="margin: 0 0 4px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; color: #e8e0d6; text-transform: uppercase; letter-spacing: 2px;">Your Discount</p>
-              <p style="margin: 0 0 8px 0; font-family: 'Alegreya', Georgia, serif; font-size: 40px; line-height: 44px; font-weight: 800; color: #c9511e;">15% OFF</p>
-              <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #e8e0d6;">Use code: <strong style="color: #ffffff; font-size: 18px; letter-spacing: 2px;">CHECKOUT15</strong></p>
+            <td style="background-color: #2a2a2a; border: 2px dashed #c9511e; border-radius: 4px; padding: 24px; text-align: center;">
+              <p style="margin: 0 0 4px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; color: #999999; text-transform: uppercase; letter-spacing: 2px;">Your Discount</p>
+              <p style="margin: 0 0 8px 0; font-family: 'Alegreya', Georgia, serif; font-size: 48px; line-height: 52px; font-weight: 800; color: #c9511e;">15% OFF</p>
+              <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; color: #e8e0d6;">Use code: <strong style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 18px; font-weight: 700; letter-spacing: 2px;">CHECKOUT15</strong></p>
             </td>
           </tr>
         </table>
       </td>
     </tr>
 
-    <!-- CHECKOUT ITEMS -->
+    <!-- YOUR CART HEADING -->
     <tr>
-      <td style="background-color: #f5f0eb; padding: 32px 40px 0 40px;" class="mobile-padding">
-        <p style="margin: 0 0 16px 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; color: #1a1a1a; text-align: center;">Your Cart</p>
+      <td style="background-color: #f5f0eb; padding: 48px 40px 16px 40px; text-align: center;" class="padding-mobile">
+        <h2 class="section-heading" style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 24px; font-weight: 700; color: #1a1a1a; text-transform: uppercase;">Your Cart</h2>
+      </td>
+    </tr>
+
+    <!-- PRODUCT CARD -->
+    <tr>
+      <td style="background-color: #f5f0eb; padding: 0 40px;" class="padding-mobile">
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 4px; overflow: hidden;">
           <tr>
             <td style="text-align: center; padding: 24px;">
@@ -86,7 +116,7 @@
           </tr>
           <tr>
             <td style="padding: 0 24px 20px 24px; text-align: center;">
-              <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; color: #1a1a1a;">{{ event.extra.line_items.0.title|default:'' }}</h2>
+              <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 20px; font-weight: 700; color: #1a1a1a;">{{ event.extra.line_items.0.title|default:'' }}</h2>
             </td>
           </tr>
         </table>
@@ -95,14 +125,14 @@
 
     <!-- TRUST -->
     <tr>
-      <td style="background-color: #f5f0eb; padding: 24px 40px 8px 40px; text-align: center;" class="mobile-padding">
-        <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; color: #888888; font-style: italic;">60+ years of family tradition. Shipped frozen &amp; packed with care.</p>
+      <td style="background-color: #f5f0eb; padding: 24px 40px 8px 40px; text-align: center;" class="padding-mobile">
+        <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; line-height: 20px; color: #888888; font-style: italic;">60+ years of family tradition. Shipped frozen &amp; packed with care.</p>
       </td>
     </tr>
 
     <!-- CTA -->
     <tr>
-      <td style="background-color: #f5f0eb; padding: 24px 40px 48px 40px; text-align: center;" class="mobile-padding">
+      <td style="background-color: #f5f0eb; padding: 16px 40px 48px 40px; text-align: center;" class="padding-mobile">
         <div style="background-color: #c9511e; border-radius: 4px; text-align: center;">
           <a href="{{ event.extra.checkout_url }}" target="_blank" style="display: block; padding: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; text-align: center;">Complete Your Purchase</a>
         </div>
@@ -111,15 +141,15 @@
 
     <!-- FOOTER -->
     <tr>
-      <td style="background-color: #1a1a1a; padding: 40px 40px 24px 40px; text-align: center;" class="mobile-padding">
+      <td style="background-color: #1a1a1a; padding: 32px 40px 16px 40px; text-align: center;" class="padding-mobile">
         <a href="https://thesausagebosssausage.com" target="_blank">
           <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="display: inline-block; max-width: 120px; height: auto; margin-bottom: 16px;">
         </a>
-        <p style="margin: 0 0 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px;">
+        <p class="footer-nav" style="margin: 0 0 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px;">
           <a href="https://thesausagebosssausage.com/collections/all" style="color: #c9511e; text-decoration: none; font-weight: 700;">Shop</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <span class="sep">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
           <a href="https://thesausagebosssausage.com/blogs/recipes" style="color: #c9511e; text-decoration: none; font-weight: 700;">Recipes</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <span class="sep">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
           <a href="https://thesausagebosssausage.com/pages/about-us" style="color: #c9511e; text-decoration: none; font-weight: 700;">Our Story</a>
         </p>
         <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">{{ organization.name }} | {{ organization.address }}</p>
