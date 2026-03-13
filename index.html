@@ -435,34 +435,37 @@
 
     sections.forEach(section => observer.observe(section));
 
-    // Copy HTML - fetches the raw file source
+    // Pre-fetch all email HTML files on page load so copy is synchronous
+    const htmlCache = {};
+    const files = [...document.querySelectorAll('.copy-btn')].map(b => b.dataset.file);
+    files.forEach(file => {
+      fetch(file).then(r => r.text()).then(html => { htmlCache[file] = html; });
+    });
+
+    // Copy HTML using cached content (synchronous = clipboard works)
     document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', async () => {
+      btn.addEventListener('click', () => {
         const file = btn.dataset.file;
-        try {
-          const res = await fetch(file);
-          const html = await res.text();
+        const html = htmlCache[file];
 
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(html);
-          } else {
-            const textarea = document.createElement('textarea');
-            textarea.value = html;
-            textarea.style.cssText = 'position:fixed;opacity:0;left:-9999px';
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-          }
-
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
-          setTimeout(() => { btn.textContent = 'Copy HTML'; btn.classList.remove('copied'); }, 2000);
-        } catch (err) {
+        if (!html) {
           window.open(file, '_blank');
-          btn.textContent = 'Opened';
+          btn.textContent = 'Opened in tab';
           setTimeout(() => { btn.textContent = 'Copy HTML'; }, 2000);
+          return;
         }
+
+        const textarea = document.createElement('textarea');
+        textarea.value = html;
+        textarea.style.cssText = 'position:fixed;opacity:0;left:-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy HTML'; btn.classList.remove('copied'); }, 2000);
       });
     });
   </script>
