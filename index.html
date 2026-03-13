@@ -45,7 +45,7 @@
     .copy-btn.copied { background: #2d8a4e; border-color: #2d8a4e; color: #fff; }
 
     .email-frame-wrapper { border: 1px solid #333; border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; background: #fff; }
-    .email-frame-wrapper iframe { width: 100%; height: 900px; border: none; display: block; }
+    .email-frame-wrapper iframe { width: 100%; height: 900px; border: none; display: block; transition: height 0.2s ease; }
 
     .footer { padding: 40px 24px; text-align: center; border-top: 1px solid #222; margin-top: 40px; }
     .footer p { font-size: 13px; color: #666; }
@@ -474,6 +474,43 @@
     }, { threshold: 0.3 });
 
     sections.forEach(section => observer.observe(section));
+
+    // Normalize iframes to render like email clients (strip browser defaults)
+    document.querySelectorAll('.email-frame-wrapper iframe').forEach(iframe => {
+      iframe.addEventListener('load', () => {
+        try {
+          const doc = iframe.contentDocument;
+          if (!doc) return;
+
+          // Inject normalizing CSS to match email client rendering
+          const style = doc.createElement('style');
+          style.textContent = `
+            html, body { margin: 0 !important; padding: 0 !important; }
+            center { margin: 0 !important; padding: 0 !important; }
+            body > center > div, body > div { margin: 0 auto !important; }
+            table { border-spacing: 0 !important; }
+          `;
+          doc.head.appendChild(style);
+
+          // Auto-resize iframe height to match content (no extra whitespace)
+          const resizeIframe = () => {
+            const h = doc.documentElement.scrollHeight;
+            if (h > 0) iframe.style.height = h + 'px';
+          };
+          resizeIframe();
+          // Resize again after images load
+          const imgs = doc.querySelectorAll('img');
+          let loaded = 0;
+          imgs.forEach(img => {
+            if (img.complete) { loaded++; }
+            else { img.addEventListener('load', () => { loaded++; if (loaded >= imgs.length) resizeIframe(); }); }
+          });
+          if (loaded >= imgs.length) resizeIframe();
+          // Final resize fallback
+          setTimeout(resizeIframe, 2000);
+        } catch(e) {}
+      });
+    });
 
     // Pre-fetch all email HTML files on page load so copy is synchronous
     const htmlCache = {};
