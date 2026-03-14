@@ -35,6 +35,7 @@
       src: url('https://fonts.gstatic.com/s/alegreya/v35/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGnBU4-6qj.woff2') format('woff2');
     }
 
+    /* Reset */
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
@@ -42,15 +43,16 @@
     a { color: inherit; }
     a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
 
+    /* Mobile */
     @media only screen and (max-width: 480px) {
       .email-container { width: 100% !important; }
       .fluid { max-width: 100% !important; height: auto !important; }
       .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
       .padding-mobile { padding-left: 20px !important; padding-right: 20px !important; }
-      .hero-text { font-size: 28px !important; line-height: 34px !important; }
-      .section-heading { font-size: 22px !important; line-height: 28px !important; }
-      .product-img { width: 100% !important; max-width: 100% !important; }
-      .trust-column { display: block !important; width: 100% !important; padding: 8px 0 !important; }
+      .hero-text { font-size: 30px !important; line-height: 38px !important; }
+      .section-heading { font-size: 24px !important; line-height: 30px !important; }
+      .product-img { width: 100% !important; max-width: 100% !important; height: auto !important; object-fit: unset !important; }
+      .trust-column { display: block !important; width: 100% !important; padding: 12px 0 !important; }
       .footer-nav td { display: block !important; padding: 4px 0 !important; text-align: center !important; }
       .footer-nav .sep { display: none !important; }
     }
@@ -58,104 +60,126 @@
 </head>
 <body style="margin: 0; padding: 0; background-color: #f5f0eb;">
   <center style="width: 100%; background-color: #f5f0eb;">
-    <!-- Preview text with whitespace padding -->
+    <!-- Preview text -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
-      Your order is saved. Just one click to finish.&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
+      Your order is saved. Just one click to finish.&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
     </div>
+
     <!--[if mso | IE]>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;">
     <tr><td>
     <![endif]-->
+
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center" class="email-container" style="margin: 0 auto; max-width: 600px;">
 
-      <!-- HEADER -->
+      <!-- ============ ORANGE ACCENT BAR ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 16px 40px; text-align: center;">
+        <td style="background-color: #c9511e; height: 4px; font-size: 1px; line-height: 1px;">&nbsp;</td>
+      </tr>
+
+      <!-- ============ HEADER ============ -->
+      <tr>
+        <td style="background-color: #ffffff; padding: 16px 40px; text-align: center;" class="padding-mobile">
           <a href="https://thesausagebosssausage.com" target="_blank">
-            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="180" alt="The Sausage Boss" style="display: inline-block; max-width: 180px; height: auto;">
+            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/ae27e980-9f81-4e27-acc6-8b5c954351fd.png" width="160" alt="The Sausage Boss" style="display: inline-block; width: 160px; max-width: 160px; height: auto;">
           </a>
         </td>
       </tr>
 
-      <!-- HEADLINE -->
+      <!-- ============ HEADLINE ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 48px 40px 16px 40px; text-align: center;" class="padding-mobile">
-          <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 32px; line-height: 38px; font-weight: 800; color: #1a1a1a; text-transform: uppercase;" class="hero-text">You're One Step Away</h1>
+        <td style="background-color: #ffffff; padding: 24px 40px 16px 40px; text-align: center;" class="padding-mobile">
+          <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 38px; line-height: 46px; font-weight: 800; color: #1a1a1a;" class="hero-text">
+            You're One Step Away
+          </h1>
         </td>
       </tr>
 
-      <!-- BODY COPY -->
+      <!-- ============ BODY TEXT ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 8px 40px 32px 40px; text-align: center;" class="padding-mobile">
-          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 26px; color: #333333;">You were <em>this close</em> to boss-level flavor. Your order is saved and ready to go. Just one click to finish.</p>
+        <td style="background-color: #ffffff; padding: 0 40px 32px 40px; text-align: center;" class="padding-mobile">
+          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 28px; color: #333333;">
+            You were <em>this close</em> to boss-level flavor. Your order is saved and ready to go. Just one click to finish.
+          </p>
         </td>
       </tr>
 
-      <!-- PRODUCT CARD -->
+      <!-- ============ PRODUCT CARD ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 0 40px;" class="padding-mobile">
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 4px; overflow: hidden;">
+        <td style="background-color: #f5f0eb; padding: 40px 40px 0 40px;" class="padding-mobile">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
             <tr>
-              <td style="text-align: center; padding: 24px;">
-                <a href="{{ event.extra.checkout_url }}" target="_blank">
-                  <img src="{{ event.extra.line_items.0.product.images.0.src|default:'' }}" width="280" alt="{{ event.extra.line_items.0.title|default:'' }}" class="product-img" style="display: block; margin: 0 auto; max-width: 280px; width: 280px; border-radius: 4px;">
+              <td style="line-height: 0; font-size: 0; text-align: center;">
+                <a href="{{ event.extra.checkout_url }}" target="_blank" style="display: block; line-height: 0;">
+                  <img src="{{ event.extra.line_items.0.product.images.0.src|default:'' }}" width="520" alt="{{ event.extra.line_items.0.title|default:'Your item' }}" style="display: block; width: 100%; max-width: 520px; height: auto;" class="fluid">
                 </a>
               </td>
             </tr>
             <tr>
-              <td style="padding: 0 24px 20px 24px; text-align: center;">
-                <h2 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 20px; font-weight: 700; color: #1a1a1a;">{{ event.extra.line_items.0.title|default:'' }}</h2>
+              <td style="padding: 20px 24px; text-align: center;">
+                <p style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 26px;">
+                  <a href="{{ event.extra.checkout_url }}" target="_blank" style="color: #1a1a1a; text-decoration: none;">{{ event.extra.line_items.0.title|default:'' }}</a>
+                </p>
               </td>
             </tr>
           </table>
         </td>
       </tr>
 
-      <!-- CTA -->
+      <!-- ============ CTA ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 32px 40px 8px 40px; text-align: center;" class="padding-mobile">
-          <div style="background-color: #c9511e; border-radius: 4px; text-align: center;">
-            <a href="{{ event.extra.checkout_url }}" target="_blank" style="display: block; padding: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; text-align: center;">Complete Your Purchase</a>
+        <td style="background-color: #f5f0eb; padding: 24px 40px 32px 40px;" class="padding-mobile">
+          <div style="background-color: #c9511e; text-align: center;">
+            <a href="{{ event.extra.checkout_url }}" target="_blank" style="display: block; padding: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
+              Complete Your Purchase
+            </a>
           </div>
         </td>
       </tr>
 
-      <!-- REASSURANCE -->
+      <!-- ============ REASSURANCE ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 0 40px 48px 40px; text-align: center;" class="padding-mobile">
-          <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #888888;">Secure checkout. Shipped frozen. Arrives in 2-5 days.</p>
+        <td style="background-color: #f5f0eb; padding: 0 40px 40px 40px; text-align: center;" class="padding-mobile">
+          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; line-height: 22px; color: #888888;">
+            Secure checkout. Shipped frozen. Arrives in 2-5 days.
+          </p>
         </td>
       </tr>
 
-      <!-- FOOTER -->
+      <!-- ============ FOOTER ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 32px 40px 16px 40px; text-align: center;" class="padding-mobile">
+        <td style="background-color: #f5f0eb; padding: 0 40px;" class="padding-mobile">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr><td style="border-top: 1px solid #e0d5c9; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color: #f5f0eb; padding: 32px 40px; text-align: center;" class="padding-mobile">
           <a href="https://thesausagebosssausage.com" target="_blank">
-            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="display: inline-block; max-width: 120px; height: auto; margin-bottom: 16px;">
+            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/ae27e980-9f81-4e27-acc6-8b5c954351fd.png" width="130" alt="The Sausage Boss" style="display: inline-block; width: 130px; max-width: 130px; height: auto;">
           </a>
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" class="footer-nav" style="margin: 0 auto 16px auto;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 16px auto 0 auto;" class="footer-nav">
             <tr>
-              <td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px;">
-                <a href="https://thesausagebosssausage.com/collections/all" style="color: #c9511e; text-decoration: none; font-weight: 700;">Shop</a>
-              </td>
-              <td class="sep" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #555555; padding: 0 8px;">&bull;</td>
-              <td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px;">
-                <a href="https://thesausagebosssausage.com/blogs/recipes" style="color: #c9511e; text-decoration: none; font-weight: 700;">Recipes</a>
-              </td>
-              <td class="sep" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #555555; padding: 0 8px;">&bull;</td>
-              <td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px;">
-                <a href="https://thesausagebosssausage.com/pages/about-us" style="color: #c9511e; text-decoration: none; font-weight: 700;">Our Story</a>
-              </td>
+              <td style="padding: 0 8px;"><a href="https://thesausagebosssausage.com/collections/all" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Shop</a></td>
+              <td class="sep" style="color: #cccccc; font-family: Arial; font-size: 11px;">&bull;</td>
+              <td style="padding: 0 8px;"><a href="https://thesausagebosssausage.com/blogs/recipes" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Recipes</a></td>
+              <td class="sep" style="color: #cccccc; font-family: Arial; font-size: 11px;">&bull;</td>
+              <td style="padding: 0 8px;"><a href="https://thesausagebosssausage.com/pages/about-us" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Our Story</a></td>
             </tr>
           </table>
-          <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">{{ organization.name }} | {{ organization.address }}</p>
-          <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;"><a href="{% web_view_link %}" style="color: #888888; text-decoration: underline;">View in Browser</a></p>
-          <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">If you'd no longer like to receive emails, <a href="{% unsubscribe_link %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a>.</p>
+          <p style="margin: 20px 0 6px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #aaaaaa;">{{ organization.name }} | {{ organization.address }}</p>
+          <p style="margin: 0 0 6px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #aaaaaa;">
+            <a href="{% web_view_link %}" style="color: #aaaaaa; text-decoration: underline;">View in Browser</a> &nbsp;&nbsp; <a href="{% unsubscribe_link %}" style="color: #aaaaaa; text-decoration: underline;">Unsubscribe</a>
+          </p>
         </td>
       </tr>
 
     </table>
-    <!--[if mso | IE]></td></tr></table><![endif]-->
+
+    <!--[if mso | IE]>
+    </td></tr></table>
+    <![endif]-->
   </center>
 </body>
 </html>

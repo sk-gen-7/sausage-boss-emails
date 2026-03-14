@@ -35,6 +35,7 @@
       src: url('https://fonts.gstatic.com/s/alegreya/v35/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGnBU4-6qj.woff2') format('woff2');
     }
 
+    /* Reset */
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
@@ -42,15 +43,18 @@
     a { color: inherit; }
     a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
 
+    /* Mobile */
     @media only screen and (max-width: 480px) {
       .email-container { width: 100% !important; }
       .fluid { max-width: 100% !important; height: auto !important; }
       .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
       .padding-mobile { padding-left: 20px !important; padding-right: 20px !important; }
-      .hero-text { font-size: 28px !important; line-height: 34px !important; }
-      .section-heading { font-size: 22px !important; line-height: 28px !important; }
-      .product-img { width: 100% !important; max-width: 100% !important; }
-      .trust-column { display: block !important; width: 100% !important; padding: 8px 0 !important; }
+      .hero-text { font-size: 30px !important; line-height: 38px !important; }
+      .section-heading { font-size: 24px !important; line-height: 30px !important; }
+      .product-img { width: 100% !important; max-width: 100% !important; height: auto !important; object-fit: unset !important; }
+      .product-text { padding: 20px !important; text-align: center !important; }
+      .trust-column { display: block !important; width: 100% !important; padding: 12px 0 !important; }
+      .hide-mobile { display: none !important; }
       .footer-nav td { display: block !important; padding: 4px 0 !important; text-align: center !important; }
       .footer-nav .sep { display: none !important; }
     }
@@ -60,7 +64,7 @@
   <center style="width: 100%; background-color: #f5f0eb;">
     <!-- Preview text -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
-      Your welcome discount is about to disappear.&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
+      Your welcome discount is about to disappear.&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
     </div>
 
     <!--[if mso | IE]>
@@ -70,79 +74,90 @@
 
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center" class="email-container" style="margin: 0 auto; max-width: 600px;">
 
+      <!-- ============ ORANGE ACCENT BAR ============ -->
+      <tr>
+        <td style="background-color: #c9511e; height: 4px; font-size: 1px; line-height: 1px;">&nbsp;</td>
+      </tr>
+
       <!-- ============ HEADER ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 16px 40px; text-align: center;" class="padding-mobile">
+        <td style="background-color: #ffffff; padding: 16px 40px; text-align: center;" class="padding-mobile">
           <a href="https://thesausagebosssausage.com" target="_blank">
-            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="180" alt="The Sausage Boss" style="display: inline-block; width: 180px; max-width: 180px; height: auto;">
+            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/ae27e980-9f81-4e27-acc6-8b5c954351fd.png" width="160" alt="The Sausage Boss" style="display: inline-block; width: 160px; max-width: 160px; height: auto;">
           </a>
         </td>
       </tr>
 
       <!-- ============ HERO IMAGE ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; line-height: 0; font-size: 0;">
-          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/cee49a9a-f7ab-4ef0-b669-ec79deea1cc2.png" width="600" alt="The Sausage Boss lifestyle" style="width: 100%; max-width: 600px; display: block;" class="fluid">
+        <td style="background-color: #ffffff; padding: 0; line-height: 0; font-size: 0;">
+          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/cee49a9a-f7ab-4ef0-b669-ec79deea1cc2.png" width="600" alt="Sausage Boss Collection" style="width: 100%; max-width: 600px; display: block;" class="fluid">
         </td>
       </tr>
 
-      <!-- ============ URGENCY HEADLINE ============ -->
+      <!-- ============ HEADLINE ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 40px 40px 16px 40px; text-align: center;" class="padding-mobile">
-          <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 32px; line-height: 38px; font-weight: 800; color: #c9511e; text-transform: uppercase; letter-spacing: 1px;" class="hero-text">
+        <td style="background-color: #ffffff; padding: 32px 40px 16px 40px; text-align: center;" class="padding-mobile">
+          <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 38px; line-height: 46px; font-weight: 800; color: #1a1a1a;" class="hero-text">
             Your 10% Off Expires Soon
           </h1>
         </td>
       </tr>
+
+      <!-- ============ BODY TEXT ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 8px 40px 32px 40px; text-align: center;" class="padding-mobile">
-          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 26px; color: #e8e0d6;">
-            We don't want you to miss out. Your welcome discount won't last forever. Here's a last chance to grab <strong style="color: #ffffff;">boss-level flavor</strong> at a discount.
+        <td style="background-color: #ffffff; padding: 0 40px 32px 40px; text-align: center;" class="padding-mobile">
+          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 28px; color: #333333;">
+            We don't want you to miss out. Your welcome discount won't last forever. Here's a last chance to grab boss-level flavor at a discount.
           </p>
         </td>
       </tr>
 
-      <!-- ============ COUPON CODE ============ -->
+      <!-- ============ COUPON BLOCK ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 0 40px 48px 40px; text-align: center;" class="padding-mobile">
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
+        <td style="background-color: #ffffff; padding: 0 40px 0 40px; text-align: center;" class="padding-mobile">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tr>
-              <td style="border: 2px dashed #c9511e; padding: 14px 40px; text-align: center;">
-                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 700; color: #c9511e; letter-spacing: 3px;">WELCOME10</p>
+              <td style="background-color: #faf7f4; border: 1px solid #e0d5c9; padding: 24px; text-align: center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td width="50%" style="text-align: center; vertical-align: middle; padding: 0 8px 0 0; border-right: 1px solid #e0d5c9;">
+                      <p style="margin: 0 0 2px 0; font-family: 'Alegreya', Georgia, serif; font-size: 40px; line-height: 44px; font-weight: 800; color: #c9511e;">10% Off</p>
+                      <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 20px; color: #666666;">your first order</p>
+                    </td>
+                    <td width="50%" style="text-align: center; vertical-align: middle; padding: 0 0 0 8px;">
+                      <p style="margin: 0 0 4px 0; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 14px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px;">Use code</p>
+                      <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 700; color: #1a1a1a; letter-spacing: 2px;">WELCOME10</p>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>
-          <p style="margin: 16px 0 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; line-height: 20px; color: #888888;">
-            Use at checkout for 10% off your first order.
-          </p>
         </td>
       </tr>
 
-      <!-- ============ PITMASTER BOX FEATURE ============ -->
+      <!-- ============ SPACER ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 48px 40px 32px 40px;" class="padding-mobile">
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #1a1a1a;">
+        <td style="background-color: #ffffff; padding: 32px 0 0 0; font-size: 1px; line-height: 1px;">&nbsp;</td>
+      </tr>
+
+      <!-- ============ PITMASTER BOX UPSELL ============ -->
+      <tr>
+        <td style="background-color: #f5f0eb; padding: 0;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tr>
-              <td style="padding: 32px 24px 8px 24px; text-align: center;">
-                <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #c9511e; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Best Value</p>
-                <h2 style="margin: 0 0 8px 0; font-family: 'Alegreya', Georgia, serif; font-size: 24px; line-height: 30px; font-weight: 800; color: #c9511e; text-transform: uppercase;">
-                  The Pitmaster Box
-                </h2>
-                <p style="margin: 0 0 24px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 24px; color: #e8e0d6;">
-                  <strong style="color: #ffffff;">6 packs. 18 links. 3 flavors.</strong><br>
-                  Everything you need to become a backyard legend.
-                </p>
+              <td class="stack-column" width="50%" style="vertical-align: top; line-height: 0; font-size: 0;">
+                <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/5b03bf4a-b9b6-440e-9fbb-a539a47a6da1.png" width="300" alt="The Pitmaster Box" style="display: block; width: 100%; max-width: 300px; height: 280px; object-fit: cover;" class="fluid">
               </td>
-            </tr>
-            <tr>
-              <td style="padding: 0 24px;">
-                <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/5b03bf4a-b9b6-440e-9fbb-a539a47a6da1.png" width="472" alt="Sausages on the smoker" style="display: block; width: 100%; max-width: 472px; height: auto; margin: 0 auto;">
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 24px;">
-                <div style="background-color: #c9511e; text-align: center;">
-                  <a href="https://thesausagebosssausage.com/products/the-pitmaster-bundle" target="_blank" style="display: block; padding: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
+              <td class="stack-column" width="50%" style="vertical-align: middle; background-color: #c9511e; padding: 32px 28px; text-align: center;">
+                <p style="margin: 0 0 6px 0; font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Best Value</p>
+                <p style="margin: 0 0 8px 0; font-family: 'Alegreya', Georgia, serif; font-size: 26px; line-height: 32px; font-weight: 800; color: #ffffff;">The Pitmaster Box</p>
+                <p style="margin: 0 0 4px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 22px; color: rgba(255,255,255,0.85);">6 packs. 18 links.</p>
+                <p style="margin: 0 0 4px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 22px; color: rgba(255,255,255,0.85);">3 flavors.</p>
+                <p style="margin: 0 0 20px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 22px; color: rgba(255,255,255,0.85);">Everything you need to become a backyard legend.</p>
+                <div style="background-color: #ffffff; text-align: center;">
+                  <a href="https://thesausagebosssausage.com/products/the-pitmaster-bundle" target="_blank" style="display: block; padding: 14px 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
                     Get the Box &mdash; $99.99
                   </a>
                 </div>
@@ -154,14 +169,14 @@
 
       <!-- ============ TESTIMONIALS ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 16px 40px 8px 40px;" class="padding-mobile">
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-left: 4px solid #c9511e;">
+        <td style="background-color: #ffffff; padding: 40px 40px 0 40px;" class="padding-mobile">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tr>
-              <td style="padding: 24px 32px;">
-                <p style="margin: 0 0 16px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 26px; color: #333333; font-style: italic;">
+              <td style="background-color: #ffffff; border-left: 4px solid #c9511e; padding: 20px 24px;">
+                <p style="margin: 0 0 12px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 24px; color: #333333; font-style: italic;">
                   "Best Sausage my clan has had anywhere...yours blows them away!"
                 </p>
-                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c9511e; font-weight: 700;">
+                <p style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 15px; font-weight: 700; color: #c9511e;">
                   - George Groves
                 </p>
               </td>
@@ -170,14 +185,14 @@
         </td>
       </tr>
       <tr>
-        <td style="background-color: #f5f0eb; padding: 8px 40px 32px 40px;" class="padding-mobile">
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-left: 4px solid #c9511e;">
+        <td style="background-color: #ffffff; padding: 20px 40px 40px 40px;" class="padding-mobile">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tr>
-              <td style="padding: 24px 32px;">
-                <p style="margin: 0 0 16px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 26px; color: #333333; font-style: italic;">
+              <td style="background-color: #ffffff; border-left: 4px solid #c9511e; padding: 20px 24px;">
+                <p style="margin: 0 0 12px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 24px; color: #333333; font-style: italic;">
                   "This was a great choice. Juicy and flavorful. New addition to my favorites."
                 </p>
-                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c9511e; font-weight: 700;">
+                <p style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 15px; font-weight: 700; color: #c9511e;">
                   - Lisa Thorne
                 </p>
               </td>
@@ -186,11 +201,11 @@
         </td>
       </tr>
 
-      <!-- ============ FINAL CTA ============ -->
+      <!-- ============ PRIMARY CTA ============ -->
       <tr>
-        <td style="background-color: #f5f0eb; padding: 16px 40px 48px 40px;" class="padding-mobile">
+        <td style="background-color: #ffffff; padding: 0 40px 40px 40px;" class="padding-mobile">
           <div style="background-color: #c9511e; text-align: center;">
-            <a href="https://thesausagebosssausage.com/collections/all" target="_blank" style="display: block; padding: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
+            <a href="https://thesausagebosssausage.com/collections/all" target="_blank" style="display: block; padding: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
               Shop Now
             </a>
           </div>
@@ -199,36 +214,39 @@
 
       <!-- ============ FOOTER ============ -->
       <tr>
-        <td style="background-color: #1a1a1a; padding: 32px 40px 16px 40px; text-align: center;" class="padding-mobile">
+        <td style="background-color: #f5f0eb; padding: 0 40px;" class="padding-mobile">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+              <td style="border-top: 1px solid #e0d5c9; font-size: 1px; line-height: 1px;">&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color: #f5f0eb; padding: 32px 40px; text-align: center;" class="padding-mobile">
           <a href="https://thesausagebosssausage.com" target="_blank">
-            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/0c3fc548-acc9-4cd6-b548-14102e5501e5.png" width="120" alt="The Sausage Boss" style="display: inline-block; width: 120px; max-width: 120px; height: auto; margin-bottom: 16px;">
+            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/YgJnGq/images/ae27e980-9f81-4e27-acc6-8b5c954351fd.png" width="130" alt="The Sausage Boss" style="display: inline-block; width: 130px; max-width: 130px; height: auto;">
           </a>
-          <p style="margin: 0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 13px; line-height: 18px; color: #888888;">
-            Premium Sausage. Unforgettable Flavor.
-          </p>
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;" class="footer-nav">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 16px auto 0 auto;" class="footer-nav">
             <tr>
               <td style="padding: 0 8px;">
-                <a href="https://thesausagebosssausage.com/collections/all" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Shop</a>
+                <a href="https://thesausagebosssausage.com/collections/all" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Shop</a>
               </td>
-              <td class="sep" style="color: #555555; font-family: Arial; font-size: 12px;">&bull;</td>
+              <td class="sep" style="color: #cccccc; font-family: Arial; font-size: 11px;">&bull;</td>
               <td style="padding: 0 8px;">
-                <a href="https://thesausagebosssausage.com/blogs/recipes" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Recipes</a>
+                <a href="https://thesausagebosssausage.com/blogs/recipes" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Recipes</a>
               </td>
-              <td class="sep" style="color: #555555; font-family: Arial; font-size: 12px;">&bull;</td>
+              <td class="sep" style="color: #cccccc; font-family: Arial; font-size: 11px;">&bull;</td>
               <td style="padding: 0 8px;">
-                <a href="https://thesausagebosssausage.com/pages/about-us" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #c9511e; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Our Story</a>
+                <a href="https://thesausagebosssausage.com/pages/about-us" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Our Story</a>
               </td>
             </tr>
           </table>
-          <p style="margin: 24px 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #666666;">
+          <p style="margin: 20px 0 6px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #aaaaaa;">
             {{ organization.name }} | {{ organization.address }}
           </p>
-          <p style="margin: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">
-            <a href="{% web_view_link %}" style="color: #888888; text-decoration: underline;">View in Browser</a>
-          </p>
-          <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #555555;">
-            No longer want to receive these emails? <a href="{% unsubscribe_link %}" style="color: #888888; text-decoration: underline;">Unsubscribe</a>
+          <p style="margin: 0 0 6px 0; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; color: #aaaaaa;">
+            <a href="{% web_view_link %}" style="color: #aaaaaa; text-decoration: underline;">View in Browser</a> &nbsp;&nbsp; <a href="{% unsubscribe_link %}" style="color: #aaaaaa; text-decoration: underline;">Unsubscribe</a>
           </p>
         </td>
       </tr>
